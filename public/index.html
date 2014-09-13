@@ -1,0 +1,55 @@
+<html>
+<head>
+	<style>
+		html {
+			height: 100vh;
+			width: 100vw;
+		}
+
+		body {
+			display: flex;
+			padding: 2em;
+			margin: 0;
+			align-content: center;
+			align-items: center;
+		}
+
+		#zip, #packages {
+			font-size: 6vw;
+			border: 1px solid #2f4eac;
+			padding: 0.1em;
+			margin: 0;
+			border-radius: 0.2em;
+			outline: 0;
+		}
+
+		#packages {
+			flex: 1;
+			border-right: 0;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		#zip {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		#zip:active {
+			box-shadow: inset 4px 4px 10px rgba(0,0,0,0.2);
+		}
+	</style>
+</head>
+<body>
+<input id="packages" type="text" placeholder="express mocha chai" /><button id="zip">ZIP</button>
+<iframe src="about:blank" height="0" width="0" id="yaano-ajax"></iframe>
+<script>
+	function download() {
+		var url = "/download/" + document.getElementById("packages").value + ".zip";
+		document.getElementById("yaano-ajax").src = url;
+	}
+
+	document.getElementById("zip").addEventListener("click", download);
+</script>
+</body>
+</html>
