@@ -38,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/Schniz/node-whiten/issues"
   },
-  "homepage": "https://github.com/Schniz/node-whiten"
+  "homepage": "https://github.com/Schniz/node-whiten",
+	"engines": {
+		"node": "0.10.35"
+	}
 }
